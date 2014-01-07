@@ -1,0 +1,11 @@
+<div id="deliveries">
+  <h2>Scheduled Deliveries</h2>
+  <% if @password_list.deliveries.any? %>
+    <%= render @password_list.deliveries %>
+  <% else %>
+    <p class="muted">There are no deliveries scheduled for this password list.</p>
+  <% end %>
+  <div id="new_delivery_link">
+    <%= link_to "Schedule a delivery", new_password_list_delivery_path(@password_list) %>
+  </div>
+</div>

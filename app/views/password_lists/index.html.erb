@@ -1,0 +1,19 @@
+<div class="heading">
+  <h2>Password Lists</h2>
+  <strong><%= link_to "New Password List", new_password_list_path %></strong>
+</div>
+<br>
+<% if @password_lists.any? %>
+  <table class="table table-striped">
+    <tr>
+      <th>List Name</th>
+      <th>Created At</th>
+      <th class="centered">Agency Count</th>
+      <th></th>
+      <th></th>
+    </tr>
+    <%= render @password_lists %>
+  </table>
+<% else %>
+  <p class="muted">There are no password lists to show.</p>
+<% end %>

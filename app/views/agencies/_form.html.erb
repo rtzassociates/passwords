@@ -1,0 +1,29 @@
+<%= form_for [@password_list, @agency] do |f| %>
+  <div class="well">
+    <% if @agency.errors.any? %>
+      <div class="errors">
+        <h3 class="danger">Please correct the following <%= 'error'.pluralize(@agency.errors.count) %>:</h3>
+        <% @agency.errors.full_messages.each do |error| %>
+          <p class="danger"><%= error %></p>
+        <% end %>
+      </div>
+    <% end %>
+    <div class="field">
+      <%= f.label :name, "Agency Name" %>
+      <%= f.text_field :name, :placeholder => "Agency Name" %>
+    </div>
+    <div class="field">
+      <%= f.label :recipients %>
+      <p class="muted">A comma-separated list of email addresses.</p>
+      <%= f.text_area :recipients, :rows => 3, :class => "span8" %>
+    </div>
+    <div class="field">
+      <%= f.label :password %>
+      <%= f.text_field :password, :placeholder => "Password" %>
+    </div>
+    <div class="actions">
+      <%= f.submit :class => "action btn" %>
+      <%= link_to 'Nevermind', @password_list, :class => "action" %>
+    </div>
+  </div>
+<% end %>

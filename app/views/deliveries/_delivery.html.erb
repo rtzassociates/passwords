@@ -1,0 +1,8 @@
+<p class="delivery">
+  <span class="delivery_name"><%= delivery.deliver_at.strftime("%b %e, %Y at %l:%M %p") %>
+  <% if delivery.delivered_at.present? %></span>
+    <span class="delivered">&#10003; Delivered</span>
+  <% else %>
+    <%= link_to 'Cancel', password_list_delivery_path(@password_list,delivery), :method => :delete, :data => { :confirm => "Are you sure?" }, :class => "undelivered danger" %>
+  <% end %>
+</p>

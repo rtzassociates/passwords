@@ -1,0 +1,18 @@
+<%= form_for [@password_list, @delivery] do |f| %>
+  <div class="well">
+    <% if @delivery.errors.any? %>
+      <h3 class="danger">Please correct the following <%= 'error'.pluralize(@delivery.errors.count) %>:</h3>
+      <% @delivery.errors.full_messages.each do |error| %>
+        <p class="danger"><%= error %></p>
+      <% end %>
+    <% end %>
+    <div class="field">
+      <%= f.label :deliver_at, "When would you like these delivered?" %>
+      <%= f.text_field :deliver_at, :placeholder => Time.now.strftime("%b %e, %Y at %l:%M %p") %>
+    </div>
+    <div class="actions">
+      <%= f.submit 'Schedule it!', :class => "action btn btn-large btn-success" %>
+      <%= link_to 'Nevermind', :back, :class => "action" %>
+    </div>
+  </div>
+<% end %>

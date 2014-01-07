@@ -1,0 +1,19 @@
+<%= form_for @password_list do |f| %>
+  <div class="well">
+    <h3>Which month is this password list for?</h3>
+    <div class="field">
+      <%= f.label :month %>
+      <%= f.select :month, options_for_select(Date::MONTHNAMES[1..-1], @password_list.month || 1.month.from_now.strftime("%B"))
+                   %>
+    </div>
+    <div class="field">
+      <%= f.label :year %>
+      <%= f.select :year, options_for_select(2013..2020) %>
+    </div>
+    <br />
+    <div class="actions">
+      <%= f.submit (@password_list.new_record? ? "Create List" : "Update List"), :class => "action btn btn-success" %>
+      <%= link_to 'Nevermind', :back, :class => "action" %>
+    </div>
+  </div>
+<% end %>

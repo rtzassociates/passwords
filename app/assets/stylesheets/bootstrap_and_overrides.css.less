@@ -1,0 +1,230 @@
+@import "twitter/bootstrap/bootstrap";
+
+.box-shadow (@x: 0; @y: 0; @blur: 5px; @color: #B5B5B5) {
+  box-shadow: @arguments;
+  -moz-box-shadow: @arguments;
+  -webkit-box-shadow: @arguments;
+}
+
+.alert {
+  margin-top: 1em;
+}
+
+body{
+  /*background-color: #FAF6ED;*/
+  background-image:url('/bedge_grunge.png');
+  /*background-repeat:repeat-y;*/
+  padding: 2em;
+  font-size: large;
+}
+
+#logo {
+  text-decoration: none;
+  font-family: 'Creepster', sans-serif;
+  font-size: 2em;
+}
+
+.container {
+  background-color: white;
+  padding: 2em;
+  border-radius: 15px;
+  .box-shadow(5px; 5px);
+}
+
+td.centered {
+  text-align: center;
+}
+
+th.centered {
+  text-align: center;
+}
+
+.subheading {
+  padding-left: 1em;
+  padding-right: 1em;
+  box-sizing: border-box;
+  ms-box-sizing: border-box;
+  webkit-box-sizing: border-box;
+  moz-box-sizing: border-box;
+}
+
+div.heading {
+  margin-top: 1em;
+}
+
+.actions {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#agency-search {
+  margin-top: 3em;
+}
+
+.danger {
+  color: red;
+}
+
+.danger:hover {
+  color: red;
+}
+
+.action {
+  margin-right: 15px;
+}
+
+#new_delivery_link {
+  padding: 1em;
+}
+
+#password_list_link {
+  padding: 1em;
+}
+
+.delivered {
+  color: green;
+  margin-left: 1em;
+}
+
+.undelivered {
+  margin-left: 1em;
+}
+
+.field input {
+  padding: 1em;
+}
+
+.field textarea {
+  padding: 1em;
+}
+
+.field label {
+  font-size: large;
+  font-weight: bold;
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#deliveries {
+  padding-top: 1em;
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.alert {
+  padding: 1em;
+  font-size: 22px;
+  font-weight: bold;
+  border: solid;
+  border-color: #CFCFCF;
+  border-width: 1px;
+}
+
+.alert-alert {
+  background-color: yellow;
+  color: black;
+}
+
+.alert-notice {
+  color: green;
+  background-color: white;
+}
+
+.alert-error {
+  color: red;
+  border-color: red;
+}
+
+.alert-dismiss {
+  float: right;
+  color: silver;
+}
+
+div#uploader {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+.agencies {
+  padding-left: 1em;
+  padding-right: 1em;
+}
+
+table#agencies {
+  margin-top: 15px;
+  border: solid;
+  border-width: 1px;
+  border-color: #DDD;
+}
+
+table td {
+  font-size: medium;
+}
+
+#new_agency_import {
+  margin-top: 1em;
+}
+
+.errors {
+  margin-bottom: 2em;
+}
+
+.delivery {
+  padding-left: 1em;
+}
+
+#deliveries h2 {
+  margin-bottom: 15px;
+}
+
+.pagination {
+  padding: 1em;
+  text-align: center;
+}
+
+.pagination ul li a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+#new_agency_link {
+  margin-top: 1em;
+  padding-right: 1em;
+}
+
+.well {
+  border: solid;
+  border-color: #E9E9E9;
+  border-width: 2px;
+  border-radius: 10px;
+}
+
+// Set the correct sprite paths
+@iconSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings");
+@iconWhiteSpritePath: asset-path("twitter/bootstrap/glyphicons-halflings-white");
+
+// Set the Font Awesome (Font Awesome is default. You can disable by commenting below lines)
+@fontAwesomeEotPath: asset-url("fontawesome-webfont.eot");
+@fontAwesomeEotPath_iefix: asset-url("fontawesome-webfont.eot#iefix");
+@fontAwesomeWoffPath: asset-url("fontawesome-webfont.woff");
+@fontAwesomeTtfPath: asset-url("fontawesome-webfont.ttf");
+@fontAwesomeSvgPath: asset-url("fontawesome-webfont.svg#fontawesomeregular");
+
+// Font Awesome
+@import "fontawesome/font-awesome";
+
+// Glyphicons
+//@import "twitter/bootstrap/sprites.less";
+
+// Your custom LESS stylesheets goes here
+//
+// Since bootstrap was imported above you have access to its mixins which
+// you may use and inherit here
+//
+// If you'd like to override bootstrap's own variables, you can do so here as well
+// See http://twitter.github.com/bootstrap/customize.html#variables for their names and documentation
+//
+// Example:
+// @linkColor: #ff0000;

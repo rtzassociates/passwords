@@ -1,0 +1,38 @@
+<div class="heading">
+  <h1><%= @password_list.name %></h1>
+  <div class="actions">
+    <%= link_to "Edit", edit_password_list_path(@password_list), :class => "action" %> 
+    <%= link_to "Delete", @password_list, :method => :delete, :data => { :confirm => "Are you sure?"}, :class => "action danger" %>
+  </div>
+  <hr>
+</div>
+
+<% if @password_list.agencies.any? %>
+  <%= render :template => "deliveries/index", :locals => { :password_list => @password_list }%>
+<% end %>
+
+<% if @password_list.agencies.any? %>
+  <%= render :template => "agencies/index", 
+             :locals => { :password_list => @password_list,
+                          :agency_import => @agency_import }%>
+  <%= will_paginate @agencies %>
+<% end %>
+
+<% if @password_list.agencies.empty? %>
+  <%= render :template => "agency_imports/new", 
+           :locals => { :password_list => @password_list } %>
+<% end %>            
+
+<div class="row">
+  <div class="span6">
+    <div id="password_list_link" class="pull-left">
+      <%= link_to("&#8592; Back to password lists".html_safe, password_lists_path) %>
+    </div>
+  </div>
+  <div class="span6">
+    <div id="new_agency_link" class="pull-right">
+      <%= link_to "Add an agency", new_password_list_agency_path(@password_list) %>
+    </div>
+  </div>
+  <div class="clearfix"></div>
+</div>

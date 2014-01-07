@@ -1,0 +1,19 @@
+<div id="uploader">
+  <h3>Password Spreadsheet Import</h3>
+  <p class="muted">Choose an Excel spreadsheet below. Then click "Import File."</p>
+  <%= form_for [@password_list, (@agency_import ||= AgencyImport.new(@password_list))] do |f| %>
+    <div class="well">
+      <% if @agency_import.errors.any? %>
+        <h3 class="danger">Please correct the following <%= 'error'.pluralize(@agency_import.errors.count) %>:</h3>
+        <% @agency_import.errors.full_messages.each do |error| %>
+        <p class="danger"><%= error %></p>
+        <% end %>
+        <br>
+      <% end %>
+      <div class="input">
+        <%= f.file_field :file %>
+        <%= f.submit "Import File", :class => "btn" %>
+      </div>
+    </div>
+  <% end %>
+</div>

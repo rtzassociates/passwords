@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Passwords</title>
+    <%= stylesheet_link_tag    "application", media: "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tag %>
+    <link href='http://fonts.googleapis.com/css?family=Creepster' rel='stylesheet' type='text/css'>
+  </head>
+  <body>
+    <div class="container">
+      <h1><%= link_to "RTZ Password Mailer", root_path, :id => "logo" %></h1>
+      <div class="row">
+        <div class="span12">
+          <% flash.each do |name, msg| %>
+            <div class="alert alert-<%= name %>">
+              <% if name == :notice %>
+                &#10003;
+              <% end %>
+              <%= msg %>
+            </div> 
+          <% end %>
+        </div>
+      </div>
+      <div class="row">
+        <div class="span12">
+          <%= yield %>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

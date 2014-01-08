@@ -5,29 +5,27 @@ gem 'rails', '3.2.9'
 # Bundle edge Rails instead:
 # gem 'rails', :git => 'git://github.com/rails/rails.git'
 
-gem 'sqlite3'
 gem 'thin'
 gem 'quiet_assets'
 gem 'delayed_job_active_record'
 gem 'daemons'
 gem 'twitter-bootstrap-rails', :git => 'git://github.com/seyhunak/twitter-bootstrap-rails.git'
 gem 'bootstrap-will_paginate'
-gem 'libv8', '~> 3.11.8.3', :platform => :ruby
-gem 'therubyracer', '~> 0.11.3', :platform => :ruby
+gem 'libv8', '~> 3.11.8.3'
+gem 'therubyracer', '~> 0.11.3'
 gem 'mysql', '~> 2.8.1'
 gem 'less-rails'
 gem 'will_paginate'
-gem 'bootstrap-will_paginate'
+gem 'roo'
+gem 'zeus'
 
 # Gems used only for assets and not required
 # in production environments by default.
+
 group :assets do
   gem 'sass-rails',   '~> 3.2.3'
   gem 'coffee-rails', '~> 3.2.1'
   gem 'chosen-rails'
-  # See https://github.com/sstephenson/execjs#readme for more supported runtimes
-  # gem 'therubyracer', :platforms => :ruby
-
   gem 'uglifier', '>= 1.0.3'
 end
 
@@ -48,4 +46,13 @@ gem 'jquery-rails'
 # To use debugger
 gem 'debugger'
 
-gem 'roo'
+
+group :test, :development do
+  gem 'rspec-rails'  
+  gem 'capybara'
+  gem 'shoulda-matchers'
+  gem 'factory_girl_rails'
+  gem 'launchy'
+  gem 'database_cleaner'
+  gem 'sqlite3'
+end

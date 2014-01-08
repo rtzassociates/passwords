@@ -1,7 +1,9 @@
 require File.expand_path('../boot', __FILE__)
 
 require 'csv'
+oldverb = $VERBOSE; $VERBOSE = nil
 require 'iconv'
+$VERBOSE = oldverb
 require 'rails/all'
 
 if defined?(Bundler)
